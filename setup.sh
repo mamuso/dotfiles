@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Variables
+CWD="$(pwd)"
+
 # Let's create symlinks
-ln -s vimrc ~/.vimrc
-ln -s vim ~/.vim
+ln -sfn "$CWD/vimrc" ~/.vimrc
+ln -sfn "$CWD/vim/" ~/.vim
