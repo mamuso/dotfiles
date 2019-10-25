@@ -13,6 +13,11 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set nowrap                      "Don't wrap lines
 set linebreak                   "Wrap lines at convenient points
+set encoding=utf-8		"Yes, we can
+
+" Remap keys
+inoremap jk <ESC>
+let mapleader = " "
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
