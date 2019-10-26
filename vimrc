@@ -4,6 +4,8 @@ set nocompatible
 " ================ General Config ====================
 
 set number                      "Line numbers are good
+set expandtab                   "Use spaces instead of tabs
+set smarttab                    "Be smart when using tabs ;)
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -13,9 +15,10 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set nowrap                      "Don't wrap lines
 set linebreak                   "Wrap lines at convenient points
-set encoding=utf-8		"Yes, we can
+set encoding=utf-8              "Yes, we can
+set spell spelllang=en_us       "Finding misspelled words
 
-" Remap keys
+" ================ Remap keys ========================
 inoremap jk <ESC>
 let mapleader = " "
 
@@ -34,6 +37,10 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 au BufNewFile,BufRead *.vundle set filetype=vim
+
+" ================ Colors ============================
+set background=dark
+colorscheme hybrid
 
 " ================ Turn Off Swap Files ==============
 
