@@ -5,6 +5,8 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # RVM available in PATH
 export PATH="$HOME/Code/github/bin:$PATH" # GitHub development
 
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 # RUN APPS
 alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
 alias calc='bc -l'
