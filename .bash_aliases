@@ -1,12 +1,12 @@
 # Aliases
 
 #!! Git
-alias g=  'git'
-alias ga= 'git add --all'
-alias gs= 'git status'
+alias g='git'
+alias ga='git add --all'
+alias gs='git status'
 alias gcm='git commit --message'
-alias gd= 'git diff'
-alias gp= 'git push'
+alias gd='git diff'
+alias gp='git push'
 
 #!! All of the other aliases will function correctly when used with sudo
 alias sudo='sudo '
