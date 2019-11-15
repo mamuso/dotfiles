@@ -1,10 +1,12 @@
 # Aliases
 
 #!! Git
-
-#!!! Adds everthing from the current folder
-alias ga='git add .'
-
+alias g=  'git'
+alias ga= 'git add --all'
+alias gs= 'git status'
+alias gcm='git commit --message'
+alias gd= 'git diff'
+alias gp= 'git push'
 
 #!! All of the other aliases will function correctly when used with sudo
 alias sudo='sudo '
