@@ -3,6 +3,5 @@
 ## Install
 
 ```
-curl -Lks https://github.com/mamuso/.dotfiles/blob/master/.bin/install.sh | /bin/bash
-
+curl -Lks https://raw.githubusercontent.com/mamuso/.dotfiles/master/.bin/install.sh | /bin/bash
 ```
