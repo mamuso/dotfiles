@@ -10,6 +10,11 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto' ||
 #!! Autocd
 shopt -s autocd
 
+#!! OSX specific configuration
+if [ $(uname) == "Darwin" ]; then
+
+fi
+
 #!! Rest of the aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
