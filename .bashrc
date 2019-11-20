@@ -12,7 +12,7 @@ unset file
 #!! OSX specific configuration
 if [ $(uname) == "Darwin" ]
 then
-  . ~/.osx
+  . ~/.bash_osx
 fi
 
 #!! Colored folders
