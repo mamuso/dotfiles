@@ -11,7 +11,8 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto' ||
 shopt -s autocd
 
 #!! OSX specific configuration
-if [ $(uname) == "Darwin" ]; then
+if [ $(uname) == "Darwin" ]
+then
 
 fi
 
