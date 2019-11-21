@@ -47,6 +47,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Fuzzy search 
 Plug 'kien/ctrlp.vim'
 
+" AG search
+Plug 'rking/ag.vim'
+
 call plug#end()
 
 " ================ Colors ============================
