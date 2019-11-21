@@ -30,13 +30,17 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
-endif
-au BufNewFile,BufRead *.vundle set filetype=vim
+" =============== Vim Plug Initialization ===============
+call plug#begin()
+
+" Hybrid color scheme
+Plug 'w0ng/vim-hybrid'
+
+Plug 'tpope/vim-sensible'
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
 
 " ================ Colors ============================
 set background=dark

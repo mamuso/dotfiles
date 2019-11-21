@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/mamuso/Code/feed.mamuso.net'
-let g:netrw_dirhist_2='/Users/mamuso/Code'
-let g:netrw_dirhist_3='/Users/mamuso/Code/# dotfiles'
-let g:netrw_dirhist_4='/Users/mamuso/Code'
-let g:netrw_dirhist_5='/Users/mamuso/Code/dotfiles/vim/vundles'
-let g:netrw_dirhist_6='/Users/mamuso/Code/dotfiles/vim/bundle'
-let g:netrw_dirhist_7='/Users/mamuso/Code/dotfiles/vim'
