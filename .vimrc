@@ -27,16 +27,20 @@ let mapleader = " "
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-"turn on syntax highlighting
+" Turn on syntax highlighting
 syntax on
 
 " =============== Vim Plug Initialization ===============
 call plug#begin()
 
+Plug 'tpope/vim-sensible'
+
 " Hybrid color scheme
 Plug 'w0ng/vim-hybrid'
 
-Plug 'tpope/vim-sensible'
+" A light and configurable statusline/tabline plugin for Vim 
+Plug 'itchyny/lightline.vim'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
@@ -47,13 +51,16 @@ set background=dark
 colorscheme hybrid
 
 " ================ Turn Off Swap Files ==============
-
 set noswapfile
 set nobackup
 set nowb
 
 " ================ Folds ============================
-
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+set nofoldenable        "don't fold by default
+
+
+" ================ Lightline =========================
+set laststatus=2
+
