@@ -36,6 +36,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 
 " Hybrid color scheme
+set foldmethod=indent   "fold based on indent
 Plug 'w0ng/vim-hybrid'
 
 " A light and configurable statusline/tabline plugin for Vim 
@@ -63,4 +64,8 @@ set nofoldenable        "don't fold by default
 
 " ================ Lightline =========================
 set laststatus=2
+set noshowmode
+let g:lightline = {
+  'colorscheme': 'wombat',
+}
 
