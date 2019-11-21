@@ -74,3 +74,7 @@ let g:lightline = { 'colorscheme': 'wombat' }
 map <C-o> :NERDTreeToggle<CR>
 " Show dotfiles
 let NERDTreeShowHidden=1
+
+" ================ CtrlP ==============================
+let g:ctrlp_show_hidden = 1
+
