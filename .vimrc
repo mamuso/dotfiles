@@ -81,10 +81,3 @@ let NERDTreeShowHidden=1
 " ================ CtrlP ==============================
 let g:ctrlp_show_hidden = 1
 
-" ================ ACK ================================
-" using ag for search
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-let g:ackprg = "ag"
-let g:ack_default_options = " --case-sensitive --noheading --nopager --nocolor --nogroup --column"
