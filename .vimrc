@@ -47,8 +47,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Fuzzy search 
 Plug 'kien/ctrlp.vim'
 
-" AG search
-Plug 'rking/ag.vim'
+" Ack search
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -81,3 +81,9 @@ let NERDTreeShowHidden=1
 " ================ CtrlP ==============================
 let g:ctrlp_show_hidden = 1
 
+" ================ ACK ================================
+" using ag for search
+let g:ctrlp_show_hidden = 1
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
