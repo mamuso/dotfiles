@@ -44,6 +44,9 @@ Plug 'itchyny/lightline.vim'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
+" Fuzzy search 
+Plug 'kien/ctrlp.vim'
+
 call plug#end()
 
 " ================ Colors ============================
@@ -69,3 +72,5 @@ let g:lightline = { 'colorscheme': 'wombat' }
 " ================ NerdTree ==========================
 " Open the tree with ctrl+O
 map <C-o> :NERDTreeToggle<CR>
+" Show dotfiles
+let NERDTreeShowHidden=1
