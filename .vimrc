@@ -40,8 +40,9 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 
-" Hybrid color scheme
-Plug 'w0ng/vim-hybrid'
+" Night Owl 
+Plug 'haishanh/night-owl.vim'
+
 
 " A light and configurable statusline/tabline plugin for Vim 
 Plug 'itchyny/lightline.vim'
@@ -59,7 +60,7 @@ call plug#end()
 
 " ================ Colors ============================
 set background=dark
-colorscheme hybrid
+colorscheme night-owl
 
 " ================ Turn Off Swap Files ==============
 set noswapfile
@@ -75,7 +76,7 @@ set nofoldenable        "don't fold by default
 " ================ Lightline =========================
 set laststatus=2
 set noshowmode
-let g:lightline = { 'colorscheme': 'wombat' }
+let g:lightline = { 'colorscheme': 'nightowl' }
 
 " ================ NerdTree ==========================
 " Open the tree with ctrl+O
