@@ -59,7 +59,9 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 " ================ Colors ============================
-set background=dark
+if (has("termguicolors"))
+ set termguicolors
+endif
 colorscheme night-owl
 
 " ================ Turn Off Swap Files ==============
