@@ -55,7 +55,7 @@ Plug 'kien/ctrlp.vim'
 " Ack search
 Plug 'mileszs/ack.vim'
 
-# Dockerfile syntax
+" Dockerfile syntax
 Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
