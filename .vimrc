@@ -43,7 +43,6 @@ Plug 'tpope/vim-sensible'
 " Night Owl 
 Plug 'haishanh/night-owl.vim'
 
-
 " A light and configurable statusline/tabline plugin for Vim 
 Plug 'itchyny/lightline.vim'
 
@@ -55,6 +54,9 @@ Plug 'kien/ctrlp.vim'
 
 " Ack search
 Plug 'mileszs/ack.vim'
+
+# Dockerfile syntax
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
