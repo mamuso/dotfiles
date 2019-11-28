@@ -4,7 +4,7 @@ set nocompatible
 " ================ General Config ====================
 
 set number                      " Line numbers are good
-set expandtab                   " Use spaces instead of tabs
+:set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs ;)
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
@@ -64,6 +64,7 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
+syntax enable
 colorscheme night-owl
 
 " ================ Turn Off Swap Files ==============
