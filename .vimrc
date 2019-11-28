@@ -16,7 +16,7 @@ set autoread                    " Reload files changed outside vim
 set nowrap                      " Don't wrap lines
 set linebreak                   " Wrap lines at convenient points
 set encoding=utf-8              " Yes, we can
-set spell spelllang=en_us       " Finding misspelled words
+" set spell spelllang=en_us       " Finding misspelled words
 set scrolloff=5                 " Leave 5 lines of buffer when scrolling
 set sidescrolloff=10            " Leave 10 characters of horizontal buffer when scrolling
 set tabstop=2                   " 
