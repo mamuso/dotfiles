@@ -73,7 +73,7 @@ colorscheme night-owl
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 highlight Text ctermbg=NONE
-highlight LineNr cmtermbg=NONE
+highlight LineNr ctermbg=NONE
 
 " ================ Turn Off Swap Files ==============
 set noswapfile
