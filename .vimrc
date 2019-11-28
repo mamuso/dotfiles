@@ -4,7 +4,7 @@ set nocompatible
 " ================ General Config ====================
 
 set number                      " Line numbers are good
-:set expandtab                   " Use spaces instead of tabs
+set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs ;)
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
@@ -64,8 +64,16 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 syntax enable
 colorscheme night-owl
+
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight Text ctermbg=NONE
+highlight LineNr cmtermbg=NONE
 
 " ================ Turn Off Swap Files ==============
 set noswapfile
