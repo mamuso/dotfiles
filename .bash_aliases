@@ -9,6 +9,7 @@ alias gd='git diff'
 alias gp='git push'
 alias gcl=$'git fetch -p && for branch in `git for-each-ref --format \'%(refname) %(upstream:track)\' refs/heads | awk \'$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}\'`; do git branch -D $branch; done'
 alias gup='for d in *; do pushd $d; git pull; popd; done'
+alias gupcl='for d in *; do pushd $d; git pull; gcl; popd; done'
 
 #!! All of the other aliases will function correctly when used with sudo
 alias sudo='sudo '
