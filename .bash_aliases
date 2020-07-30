@@ -25,7 +25,7 @@ alias c='clear'
 #!! Check for Homebrew updates, brew upgrades and cleanup
 alias update='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
 
-alias python=/usr/local/bin/python3
+alias python=/usr/bin/python3
 
 #!! Web Simple Server
 alias webserver="python -m SimpleHTTPServer 8000"
