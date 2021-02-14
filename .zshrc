@@ -9,7 +9,7 @@ export PATH=~/.npm-global/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="refined"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,3 +105,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -r "/opt/homebrew/opt/mcfly/mcfly.zsh" ]]; then
   source "/opt/homebrew/opt/mcfly/mcfly.zsh"
 fi
+
+# Pure
+autoload -U promptinit; promptinit
+prompt pure
