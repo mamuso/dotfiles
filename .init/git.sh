@@ -18,7 +18,7 @@ while true; do
   read email
     case $email in
         "" ) echo "Your email can't be empty.";;
-        * ) git config --global user.email "$name"; break;;
+        * ) git config --global user.email "$email"; break;;
     esac
 done
 
