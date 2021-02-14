@@ -14,4 +14,3 @@ npm install -g npm@latest
 
 # Pure theme for zsh
 npm install --g pure-prompt
-ln -s ~/.npm-global/lib/node_modules/pure-prompt/ ~/.zsh/pure

@@ -108,5 +108,4 @@ fi
 
 # Pure
 autoload -U promptinit; promptinit
-fpath+=("$HOME/.zsh/pure")
 prompt pure
