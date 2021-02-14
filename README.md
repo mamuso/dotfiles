@@ -4,21 +4,22 @@ I was inpired by [Nicola Paolucci's article](https://www.atlassian.com/git/tutor
 
 ## Installation
 
-<!-- TODO: Write a warning -->
-
 ```
-curl -Lks https://raw.githubusercontent.com/mamuso/.dotfiles/master/.bin/install.sh | /bin/bash
+curl -Lks https://raw.githubusercontent.com/mamuso/.dotfiles/master/.init/install.sh | /bin/bash
 ```
 
-### Smells like a freshly created mac account
+### Homebrew
+
+Install homebrew and some useful formulas.
+
+```bash
+./bin/brew.sh
+```
 
 <!--
-
-
 
 ## Pre-install
 
 - [Manually change npm’s default directory](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 
-
-## Known issues -->
+ -->
