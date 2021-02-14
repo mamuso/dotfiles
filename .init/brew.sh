@@ -34,6 +34,9 @@ brew install gnu-sed
 # Install GitHub CLI
 brew install gh
 
+# Install node
+brew install node
+
 # Install McFly
 brew tap cantino/mcfly https://github.com/cantino/mcfly
 brew install mcfly
