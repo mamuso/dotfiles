@@ -11,6 +11,3 @@ npm config set prefix '~/.npm-global'
 
 # Update the npm cli
 npm install -g npm@latest
-
-# Pure theme for zsh
-npm install --g pure-prompt
