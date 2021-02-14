@@ -107,5 +107,6 @@ if [[ -r "/opt/homebrew/opt/mcfly/mcfly.zsh" ]]; then
 fi
 
 # Pure
+fpath+='/Users/mamuso/.npm-global/lib/node_modules/pure-prompt/functions'
 autoload -U promptinit; promptinit
 prompt pure
