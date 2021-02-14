@@ -101,3 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# McFly
+if [[ -r "/usr/local/opt/mcfly/mcfly.zsh" ]]; then
+  source "/usr/local/opt/mcfly/mcfly.zsh"
+fi
