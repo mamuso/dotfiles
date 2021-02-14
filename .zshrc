@@ -102,6 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # McFly
-if [[ -r "/usr/local/opt/mcfly/mcfly.zsh" ]]; then
-  source "/usr/local/opt/mcfly/mcfly.zsh"
+if [[ -r "/opt/homebrew/opt/mcfly/mcfly.zsh" ]]; then
+  source "/opt/homebrew/opt/mcfly/mcfly.zsh"
 fi
