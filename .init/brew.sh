@@ -44,6 +44,7 @@ brew install mcfly
 # Install rbenv
 brew install rbenv
 rbenv init
+#rbenv install 2.7.2
 
 # Install Jetbrains mono
 brew install homebrew/cask-fonts/font-jetbrains-mono
