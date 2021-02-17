@@ -1,9 +1,0 @@
-# .bash_osx
-
-#!! McFly bash search
-if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.bash" ]]; then
-  source "$(brew --prefix)/opt/mcfly/mcfly.bash"
-fi
-
-eval "$(rbenv init -)"
-
