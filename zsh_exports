@@ -1,11 +1,8 @@
-# .bash_exports
+# Exports
 
-#!! Temporary exports
-# PATH SETUP
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$HOME/Code/github/bin:$PATH" # GitHub development
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # RVM available in PATH
 export PATH="~/.npm-global/bin:$PATH"
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

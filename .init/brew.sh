@@ -41,5 +41,9 @@ brew install node
 brew tap cantino/mcfly https://github.com/cantino/mcfly
 brew install mcfly
 
+# Install rbenv
+brew install rbenv
+rbenv init
+
 # Install Jetbrains mono
 brew install homebrew/cask-fonts/font-jetbrains-mono

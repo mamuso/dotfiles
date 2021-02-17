@@ -2,7 +2,7 @@
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Load all the bash dotfiles
-for file in ~/.zsh_{aliases,profile}; do
+for file in ~/.zsh_{aliases,exports}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
