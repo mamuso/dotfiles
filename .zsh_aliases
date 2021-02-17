@@ -28,4 +28,4 @@ alias update='brew update && brew upgrade --all && brew cask update && brew clea
 alias python=/usr/bin/python3
 
 #!! Web Simple Server
-alias webserver="python -m SimpleHTTPServer 8000"
+alias webserver="python -m http.server"
