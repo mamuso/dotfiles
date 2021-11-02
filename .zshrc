@@ -38,9 +38,7 @@ export PATH=~/.npm-global/bin:$PATH
 export LANG=en_US.UTF-8
 
 # McFly
-if [[ -r "/opt/homebrew/opt/mcfly/mcfly.zsh" ]]; then
-  source "/opt/homebrew/opt/mcfly/mcfly.zsh"
-fi
+eval "$(mcfly init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
