@@ -22,7 +22,29 @@ while true; do
   echo -ne "${PURPLE}Do you wish to install Xcode Command Line Tools?${GREY} (Y/n) → ${NC}"
   read -p "" yn && yn="${yn:-y}"
     case $yn in
-        [Yy]* ) xcode-select --install; break;;
+        [Yy]* ) sudo softwareupdate -i -a && xcode-select --install; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# Zsh
+while true; do
+  echo -ne "${PURPLE}Do you wish to install zsh?${GREY} (Y/n) → ${NC}"
+  read -p "" yn && yn="${yn:-y}"
+    case $yn in
+        [Yy]* ) $BASEDIR/zsh.sh; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+# Brew
+while true; do
+  echo -ne "${PURPLE}Do you wish to install brew?${GREY} (Y/n) → ${NC}"
+  read -p "" yn && yn="${yn:-y}"
+    case $yn in
+        [Yy]* ) $BASEDIR/brew.sh; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
@@ -39,13 +61,3 @@ while true; do
     esac
 done
 
-# Brew
-while true; do
-  echo -ne "${PURPLE}Do you wish to install brew?${GREY} (Y/n) → ${NC}"
-  read -p "" yn && yn="${yn:-y}"
-    case $yn in
-        [Yy]* ) $BASEDIR/brew.sh; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
