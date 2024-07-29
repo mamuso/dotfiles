@@ -23,7 +23,7 @@ alias fgrep='fgrep --color=auto -n'
 alias c='clear'
 
 #!! Check for Homebrew updates, brew upgrades and cleanup
-alias update='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
+alias update='brew update && brew upgrade && brew cask update && brew cleanup && brew cask cleanup'
 
 alias python=/usr/bin/python3
 

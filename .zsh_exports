@@ -1,5 +1,4 @@
 # Exports
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
@@ -7,13 +6,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="~/.npm-global/bin:$PATH"
 
 # Homebrew
-eval $(brew shellenv)
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init -)"
-
-# deno
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"

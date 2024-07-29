@@ -11,9 +11,8 @@ echo -e "${MEDIUMORCHID}==>${NC} Installing brew"
 echo -e "${MEDIUMORCHID}==>${NC} Installing brew packages"
 
 # Make sure we’re using the latest Homebrew.
-brew update
-
 # Upgrade any already-installed formulae.
+brew update
 brew upgrade
 
 # Save Homebrew’s installed location.
@@ -30,13 +29,10 @@ brew install moreutils
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed
-
 # Install GitHub CLI
 brew install gh
-
 # Install node
 brew install node
-
 # Install McFly
 brew tap cantino/mcfly https://github.com/cantino/mcfly
 brew install mcfly
@@ -46,5 +42,5 @@ brew install rbenv
 rbenv init
 #rbenv install 2.7.2
 
-# Install Jetbrains mono
-brew install homebrew/cask-fonts/font-jetbrains-mono
+# Install fonts
+brew install font-jetbrains-mono font-mona-sans font-monaspace font-inter font-geist
