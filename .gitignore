@@ -1,1 +1,45 @@
+# Dotfiles bare repo directory
 .dotfiles
+
+# Sensitive files
+.ssh/
+*.pem
+*.key
+.env
+.env.*
+.gitconfig.local
+.npmrc
+*_history
+.bash_history
+.zsh_history
+.node_repl_history
+
+# Auto-generated files
+.DS_Store
+.zcompdump-*
+.viminfo
+.lesshst
+.wget-hsts
+
+# Cache directories
+.cache/
+.npm/
+.pnpm-store/
+.fnm/
+
+# Application state
+.claude/
+.claude.json
+.vscode/
+.cursor/
+
+# Build outputs
+node_modules/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~

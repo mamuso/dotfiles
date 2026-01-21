@@ -1,0 +1,154 @@
+# Git Configuration Template
+#
+# This file provides a template for your .gitconfig with sensitive
+# information separated into .gitconfig.local
+#
+# Setup Instructions:
+# 1. Copy this file to ~/.gitconfig:
+#    cp .gitconfig.template ~/.gitconfig
+#
+# 2. Create ~/.gitconfig.local with your personal information:
+#    [user]
+#        name = Your Name
+#        email = your.email@example.com
+#
+# 3. The main .gitconfig will automatically include .gitconfig.local
+
+[include]
+    # Load personal user information from a separate file
+    # This file is not tracked in the repository
+    path = ~/.gitconfig.local
+
+[http]
+    # Increase buffer size for large repositories
+    postBuffer = 857286400
+
+[filter "lfs"]
+    # Git LFS (Large File Storage) configuration
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+
+[core]
+    # Use VS Code as default editor (change to your preference)
+    # Options: vim, nano, code --wait, subl -w
+    editor = vim
+
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+    # Make `git rebase` safer on macOS
+    trustctime = false
+
+    # Prevent showing files whose names contain non-ASCII symbols as unversioned
+    precomposeunicode = false
+
+    # Speed up commands involving untracked files such as `git status`
+    untrackedCache = true
+
+[color]
+    # Use colors in Git commands that are capable of colored output
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[push]
+    # Push only the current branch by default
+    default = simple
+
+    # Automatically set up remote tracking
+    autoSetupRemote = true
+
+[pull]
+    # Use rebase instead of merge when pulling
+    rebase = true
+
+[fetch]
+    # Automatically prune deleted remote branches
+    prune = true
+
+[rebase]
+    # Automatically stash and unstash working directory when rebasing
+    autoStash = true
+
+[diff]
+    # Detect renames and copies
+    renames = copies
+
+    # Use better, more readable diff algorithm
+    algorithm = histogram
+
+[merge]
+    # Include summaries of merged commits in merge commit messages
+    log = true
+
+    # Use the new diff3 conflict style
+    conflictstyle = diff3
+
+[init]
+    # Use 'main' as the default branch name
+    defaultBranch = main
+
+[alias]
+    # View abbreviated SHA, description, and history graph
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # View the current working tree status using the short format
+    s = status -s
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend --reuse-message=HEAD
+
+    # Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # Find branches containing commit
+    fb = "!f() { git branch -a --contains $1; }; f"
+
+    # Find commits by commit message
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+    # Remove branches that have already been merged with main
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+
+[help]
+    # Automatically correct and execute mistyped commands after 2 seconds
+    autocorrect = 20
+
+# URL rewrites for convenience
+[url "git@github.com:"]
+    # Use SSH instead of HTTPS for GitHub
+    # Uncomment if you prefer SSH
+    # insteadOf = https://github.com/
+
+# GitHub CLI integration
+[credential "https://github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
