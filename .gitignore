@@ -27,11 +27,6 @@
 .pnpm-store/
 .fnm/
 
-# Application state
-.claude/
-.claude.json
-.vscode/
-.cursor/
 
 # Build outputs
 node_modules/

@@ -31,9 +31,6 @@ alias pni='pnpm install'
 alias pnr='pnpm run'
 alias pnx='pnpm exec'
 
-#!! Claude Code
-alias claude='claude-code'
-
 #!! Git worktree helpers
 alias gwl='git worktree list'
 alias gwa='git worktree add'
