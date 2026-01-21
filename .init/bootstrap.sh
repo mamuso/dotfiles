@@ -50,3 +50,14 @@ while true; do
     esac
 done
 
+# Node.js (fnm + pnpm)
+while true; do
+  echo -ne "${PURPLE}Do you wish to install Node.js (fnm + pnpm)?${GREY} (Y/n) → ${NC}"
+  read -p "" yn && yn="${yn:-y}"
+    case $yn in
+        [Yy]* ) $BASEDIR/node.sh; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+

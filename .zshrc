@@ -34,7 +34,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-export PATH=~/.npm-global/bin:$PATH
 export LANG=en_US.UTF-8
 
 # McFly
