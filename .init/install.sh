@@ -8,8 +8,51 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Parse arguments
+INSTALL_MODE="all"
+for arg in "$@"; do
+    case $arg in
+        --skills-only)
+            INSTALL_MODE="skills"
+            ;;
+        --dotfiles-only)
+            INSTALL_MODE="dotfiles"
+            ;;
+        --all)
+            INSTALL_MODE="all"
+            ;;
+        --help|-h)
+            echo "Usage: install.sh [OPTIONS]"
+            echo ""
+            echo "Options:"
+            echo "  --all           Install everything (default)"
+            echo "  --skills-only   Install only AI skills/agent configs"
+            echo "  --dotfiles-only Install only shell/editor dotfiles (no AI stuff)"
+            echo "  --help, -h      Show this help message"
+            echo ""
+            echo "Examples:"
+            echo "  curl -fsSL <url>/install.sh | bash"
+            echo "  curl -fsSL <url>/install.sh | bash -s -- --skills-only"
+            echo ""
+            echo "To upgrade from partial to full install later:"
+            echo "  config sparse-checkout disable && config checkout"
+            exit 0
+            ;;
+    esac
+done
+
 echo ""
-echo -e "${MEDIUMORCHID}==> Installing dotfiles${NC}"
+case $INSTALL_MODE in
+    skills)
+        echo -e "${MEDIUMORCHID}==> Installing AI skills/agents only${NC}"
+        ;;
+    dotfiles)
+        echo -e "${MEDIUMORCHID}==> Installing dotfiles only (no AI)${NC}"
+        ;;
+    *)
+        echo -e "${MEDIUMORCHID}==> Installing dotfiles${NC}"
+        ;;
+esac
 echo ""
 
 # Check if git is installed
@@ -55,6 +98,40 @@ echo -e "${GREEN}✓${NC} Repository cloned"
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
+
+# Configure sparse-checkout if not installing everything
+if [ "$INSTALL_MODE" != "all" ]; then
+    echo ""
+    echo -e "${MEDIUMORCHID}→${NC} Configuring sparse-checkout for $INSTALL_MODE mode..."
+
+    config sparse-checkout init --cone
+
+    if [ "$INSTALL_MODE" = "skills" ]; then
+        # Skills/agents only: AI-related directories
+        config sparse-checkout set \
+            .agents \
+            .claude \
+            .cursor \
+            .codex \
+            .opencode \
+            skills
+        echo -e "${GREEN}✓${NC} Sparse-checkout configured for AI skills/agents"
+    elif [ "$INSTALL_MODE" = "dotfiles" ]; then
+        # Dotfiles only: everything except AI directories
+        # First set all, then use no-cone mode for negation
+        config sparse-checkout init --no-cone
+        cat > "$HOME/.dotfiles/info/sparse-checkout" << 'EOF'
+/*
+!/.agents/
+!/.claude/
+!/.cursor/
+!/.codex/
+!/.opencode/
+!/skills/
+EOF
+        echo -e "${GREEN}✓${NC} Sparse-checkout configured for dotfiles only"
+    fi
+fi
 
 # Create backup directory with timestamp
 BACKUP_DIR="$HOME/.dotfiles-backup"
@@ -102,12 +179,43 @@ config config status.showUntrackedFiles no
 echo -e "${GREEN}✓${NC} Configured dotfiles repository"
 
 echo ""
-echo -e "${GREEN}==> Dotfiles installation complete!${NC}"
+echo -e "${GREEN}==> Installation complete!${NC}"
 echo ""
-echo "Next steps:"
-echo "  1. Review backed up files (if any) in: $BACKUP_DIR"
-echo "  2. Run the bootstrap script: ~/.init/bootstrap.sh"
-echo "  3. Restart your terminal or run: source ~/.zshrc"
+
+case $INSTALL_MODE in
+    skills)
+        echo "Installed: AI skills and agent configs only"
+        echo ""
+        echo "Included directories:"
+        echo "  .agents/    - Skill definitions"
+        echo "  .claude/    - Claude Code config"
+        echo "  .cursor/    - Cursor IDE skills (symlinks)"
+        echo "  .codex/     - Codex skills (symlinks)"
+        echo "  .opencode/  - OpenCode skills (symlinks)"
+        echo "  skills/     - Additional skill symlinks"
+        echo ""
+        echo "To upgrade to full dotfiles later:"
+        echo "  config sparse-checkout disable && config checkout"
+        ;;
+    dotfiles)
+        echo "Installed: Shell/editor dotfiles only (no AI)"
+        echo ""
+        echo "Next steps:"
+        echo "  1. Review backed up files (if any) in: $BACKUP_DIR"
+        echo "  2. Run the bootstrap script: ~/.init/bootstrap.sh"
+        echo "  3. Restart your terminal or run: source ~/.zshrc"
+        echo ""
+        echo "To upgrade to include AI skills later:"
+        echo "  config sparse-checkout disable && config checkout"
+        ;;
+    *)
+        echo "Next steps:"
+        echo "  1. Review backed up files (if any) in: $BACKUP_DIR"
+        echo "  2. Run the bootstrap script: ~/.init/bootstrap.sh"
+        echo "  3. Restart your terminal or run: source ~/.zshrc"
+        ;;
+esac
+
 echo ""
 echo "To manage your dotfiles, use the 'config' alias:"
 echo "  config status"

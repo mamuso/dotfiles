@@ -26,7 +26,7 @@ This alias is defined in `.zshrc:2` and should be used for all Git operations in
   - `ghostty/themes/` - Ghostty terminal themes (Catppuccin + Vercel)
   - `karabiner/karabiner.json` - Keyboard remapping configuration
 - **Installation scripts**: `.init/` directory contains modular setup scripts
-  - `install.sh` - Clones the bare repository and checks out dotfiles
+  - `install.sh` - Clones bare repo, supports `--all`, `--skills-only`, `--dotfiles-only`
   - `bootstrap.sh` - Interactive setup orchestrator
   - `brew.sh` - Homebrew and package installation
   - `zsh.sh` - Oh My Zsh and Powerlevel10k setup
@@ -120,6 +120,32 @@ The repository uses **fnm** (Fast Node Manager) instead of nvm, and **pnpm** ins
    - Test changes by sourcing the file: `source ~/.zshrc`
    - Changes to `.zshenv`, `.zsh_exports`, or `.zsh_aliases` require reloading `.zshrc`
    - `.zshenv` is loaded for all zsh instances, use for environment-wide settings
+
+### Selective Installation
+
+The install script supports three modes via command-line flags:
+
+```bash
+# Full install (default) - everything
+curl -fsSL <url>/install.sh | bash
+
+# Skills/agents only - AI configs for Claude, Cursor, Codex, OpenCode
+curl -fsSL <url>/install.sh | bash -s -- --skills-only
+
+# Dotfiles only - shell/editor configs, no AI stuff
+curl -fsSL <url>/install.sh | bash -s -- --dotfiles-only
+```
+
+**Skills-only includes:**
+- `.agents/` - Skill definitions (24 skills)
+- `.claude/` - Claude Code settings and statusline
+- `.cursor/`, `.codex/`, `.opencode/` - Symlinked skills for other AI tools
+- `skills/` - Additional skill symlinks
+
+**To upgrade from partial to full install:**
+```bash
+config sparse-checkout disable && config checkout
+```
 
 ### Testing Installation Scripts
 

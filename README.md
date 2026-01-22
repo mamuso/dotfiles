@@ -46,14 +46,27 @@ Before installing, ensure you have:
 Run the following command to install the dotfiles:
 
 ```bash
+# Full install (default) - everything
 curl -Lks https://raw.githubusercontent.com/mamuso/dotfiles/main/.init/install.sh | /bin/bash
+
+# Skills/agents only - AI configs for Claude, Cursor, Codex, OpenCode
+curl -Lks https://raw.githubusercontent.com/mamuso/dotfiles/main/.init/install.sh | bash -s -- --skills-only
+
+# Dotfiles only - shell/editor configs, no AI stuff
+curl -Lks https://raw.githubusercontent.com/mamuso/dotfiles/main/.init/install.sh | bash -s -- --dotfiles-only
 ```
 
-This will:
+The full install will:
 1. Clone the dotfiles repository to `~/.dotfiles/`
 2. Create a bare git repository at `~/.dotfiles/`
 3. Check out the dotfiles to your home directory
-4. Run the bootstrap script to set up your environment
+
+**Skills-only** installs: `.agents/`, `.claude/`, `.cursor/`, `.codex/`, `.opencode/`, `skills/`
+
+**To upgrade from partial to full install:**
+```bash
+config sparse-checkout disable && config checkout
+```
 
 ## Bootstrap Options
 
@@ -247,7 +260,7 @@ update      # Update Homebrew packages and cleanup
 ```
 ~/.dotfiles/           # Bare git repository
 ~/.init/               # Installation scripts
-  ├── install.sh       # Initial setup script
+  ├── install.sh       # Initial setup (--all, --skills-only, --dotfiles-only)
   ├── bootstrap.sh     # Interactive setup orchestrator
   ├── brew.sh          # Homebrew packages
   ├── zsh.sh           # Oh My Zsh + Powerlevel10k
@@ -258,6 +271,11 @@ update      # Update Homebrew packages and cleanup
   ├── gh/              # GitHub CLI
   ├── ghostty/         # Ghostty terminal themes
   └── karabiner/       # Keyboard remapping
+~/.agents/skills/      # AI skill definitions (24 skills)
+~/.claude/             # Claude Code settings + statusline
+~/.cursor/skills/      # Cursor IDE skills (symlinks)
+~/.codex/skills/       # Codex skills (symlinks)
+~/.opencode/skills/    # OpenCode skills (symlinks)
 ~/.zshrc              # Main Zsh config
 ~/.zsh_aliases        # Command aliases
 ~/.zsh_exports        # PATH and environment variables
