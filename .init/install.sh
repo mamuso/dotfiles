@@ -104,17 +104,18 @@ if [ "$INSTALL_MODE" != "all" ]; then
     echo ""
     echo -e "${MEDIUMORCHID}→${NC} Configuring sparse-checkout for $INSTALL_MODE mode..."
 
-    config sparse-checkout init --cone
-
     if [ "$INSTALL_MODE" = "skills" ]; then
         # Skills/agents only: AI-related directories
-        config sparse-checkout set \
-            .agents \
-            .claude \
-            .cursor \
-            .codex \
-            .opencode \
-            skills
+        # Use no-cone mode to exclude root-level dotfiles
+        config sparse-checkout init --no-cone
+        cat > "$HOME/.dotfiles/info/sparse-checkout" << 'EOF'
+/.agents/
+/.claude/
+/.cursor/
+/.codex/
+/.opencode/
+/skills/
+EOF
         echo -e "${GREEN}✓${NC} Sparse-checkout configured for AI skills/agents"
     elif [ "$INSTALL_MODE" = "dotfiles" ]; then
         # Dotfiles only: everything except AI directories
