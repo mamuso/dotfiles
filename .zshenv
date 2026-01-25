@@ -1,2 +1,1 @@
-. "$HOME/.cargo/env"
 export PATH="/Users/mamuso/.bun/bin:/Users/mamuso/.local/bin:/Users/mamuso/.npm-global/bin:/Users/mamuso/.rbenv/shims:/Users/mamuso/Library/pnpm:/Users/mamuso/.rbenv/shims:/Users/mamuso/.rbenv/bin:/Users/mamuso/.local/state/fnm_multishells/16975_1768061953972/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/mamuso/Library/Application Support/fnm:/opt/homebrew/opt/postgresql@15/bin:~/.npm-global/bin:/Users/mamuso/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Ghostty.app/Contents/MacOS:/opt/homebrew/bin"
