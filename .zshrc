@@ -19,9 +19,14 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Choose between one [code, code-insiders or codium]
-# The following line will make the plugin to open VS Code Insiders
-# Invalid entries will be ignored, no aliases will be added
-VSCODE=code-insiders
+# Auto-detect which VS Code is installed
+if command -v code-insiders &> /dev/null; then
+  VSCODE=code-insiders
+elif command -v code &> /dev/null; then
+  VSCODE=code
+elif command -v codium &> /dev/null; then
+  VSCODE=codium
+fi
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
